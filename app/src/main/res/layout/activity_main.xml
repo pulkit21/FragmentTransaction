@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#FFee00"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addA"
+        android:onClick="addButtA"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:text="Add A"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove A"
+        android:onClick="removeButtA"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/removeA"
+        android:layout_toRightOf="@+id/addA"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/replaceA"
+        android:onClick="replaceButtA"
+        android:layout_marginLeft="5dp"
+        android:text="Replace A with B"
+        android:layout_toRightOf="@+id/removeA"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attach A"
+        android:onClick="attachButtA"
+        android:id="@+id/attachA"
+        android:layout_below="@+id/addA" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="deattachButtA"
+        android:text="Deattach A"
+        android:id="@+id/deattachA"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/attachA"
+        android:layout_below="@+id/removeA"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/replaceB"
+        android:onClick="replaceButtB"
+        android:layout_marginLeft="5dp"
+        android:text="Replace B with A"
+        android:layout_toRightOf="@+id/deattachA"
+        android:layout_below="@+id/replaceA"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addB"
+        android:onClick="addButtB"
+        android:text="Add B"
+        android:layout_below="@+id/attachA"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/popB"
+        android:onClick="addButtPopA"
+        android:layout_toRightOf="@+id/addB"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/deattachA"
+        android:text="Pop Add b"/>
+
+        <Button
+            android:layout_below="@+id/addB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="showDialog"
+            android:id="@+id/showDia"
+            android:text="show Dialog"/>
+
+    <LinearLayout
+        android:layout_below="@+id/showDia"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp">
+        <LinearLayout
+            android:id="@+id/group"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#FFEEEE">
+        </LinearLayout>
+        <ScrollView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#eeeeff">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/message"/>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>
